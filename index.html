@@ -1,1 +1,37 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="todo">
+        <div class="todo_category">
+            <h2 class="category_title">Category</h2>
+            <div class="todo_category_content">
+                 <a class="todo_item" href="#">All</a>
+                 <a class="todo_item" href="">Groceries</a>
+                 <a class="todo_item" href="">Payments</a>
+                 <a class="todo_item" href="">College</a>
+            </div>
+            <div class="todo_category_manage">
+                <button id="category_btn">Delete selected</button>
+            </div>
+        </div>
+        <div class="todo_main">
+            <div class="todo_main_content">
+                 <h1 class="todo_title"> All Tasks</h1>
+                 <div class="todo_new">
+                    <input type="text" placeholder="New Item">
+                    <div class="todo_add">+</div>
+                 </div>
+            </div>           
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
