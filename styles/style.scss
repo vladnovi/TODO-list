@@ -26,40 +26,91 @@ body {
     display: grid;
     grid-template-columns: 20% 80%;
 }
+
 .todo_category {
     border-right: 1px solid black;
     max-width: 150px;
+    .category_title {
+        margin-top: 30px;
+     }
+    .category_item_cover { 
+        margin-top: 30px;
+        .category_item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .category_item a {
+            font-size: 23px;
+            text-decoration: none;
+            color: var(--accent);
+        }
+     }
+     
+    #category_dlt_btn, #category_add_btn {
+         margin-top: 10px;
+         padding: 5px;
+         background-color: var(--accent);
+         color: #fff;
+         border: none;
+         border-radius: 20px;
+         cursor: pointer;
+     }
 }
-.category_title {
-   margin-top: 30px;
-}
-.todo_category_content { 
-   margin-top: 30px;
-}
-.todo_item {
-    display: block;
-    font-size: 23px;
-    color: var(--accent);
-    text-decoration: none;
-}
-#category_btn {
-    margin-top: 30px;
-    padding: 5px;
-    background-color: var(--accent);
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-}
-.todo_main_content {
-    margin: 20px;
-}
-.todo_title {
 
-}
-.todo_new {
-
-}
-.todo_add {
+.todo_main {
+    .main_content {
+        margin: 16px;
+        .main_title {
+            text-align: center;
+        }
+        .main_new {
+            display: flex;
+            --size: 50px;
+            .main_input {
+                font-size: 18px;
+                padding: 8px 16px;
+                height: var(--size);
+                border: 1px solid rgba($color: #000000, $alpha: 0.2);
+                border-radius: 5px;
+                flex-grow: 1;
+            }
+        }
+    }
     
+    .main_add, .main_task_del {
+        cursor: pointer;
+        text-align: center;
+        margin-left: 10px;
+        width: var(--size);
+        height: var(--size);
+        line-height: calc(var(--size) * 0.95);
+        font-size: 32px;
+        background: var(--accent);
+        color: #fff;
+        border: 1px solid rgba($color: #000000, $alpha: 0.2);
+        border-radius: var(--size);
+    }
+    .main_task_cover {
+        margin: 10px;
+        .main_task {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            min-height: var(--size);
+            .main_task_text {
+                font-size: 20px;
+            }
+            .main_task_del {
+                display: none;
+                margin-left: auto;
+                margin-right: 0;
+                --size: 25px;
+                line-height: calc(var(--size) * 0.88);
+            }
+        }
+        .main_task:hover .main_task_del {
+            display: block; 
+        }
+    } 
 }

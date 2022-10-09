@@ -30,24 +30,24 @@ body {
   border-right: 1px solid black;
   max-width: 150px;
 }
-
-.category_title {
+.todo_category .category_title {
   margin-top: 30px;
 }
-
-.todo_category_content {
+.todo_category .category_item_cover {
   margin-top: 30px;
 }
-
-.todo_item {
-  display: block;
+.todo_category .category_item_cover .category_item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.todo_category .category_item_cover .category_item a {
   font-size: 23px;
-  color: var(--accent);
   text-decoration: none;
+  color: var(--accent);
 }
-
-#category_btn {
-  margin-top: 30px;
+.todo_category #category_dlt_btn, .todo_category #category_add_btn {
+  margin-top: 10px;
   padding: 5px;
   background-color: var(--accent);
   color: #fff;
@@ -56,6 +56,56 @@ body {
   cursor: pointer;
 }
 
-.todo_main_content {
-  margin: 20px;
+.todo_main .main_content {
+  margin: 16px;
+}
+.todo_main .main_content .main_title {
+  text-align: center;
+}
+.todo_main .main_content .main_new {
+  display: flex;
+  --size: 50px;
+}
+.todo_main .main_content .main_new .main_input {
+  font-size: 18px;
+  padding: 8px 16px;
+  height: var(--size);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  flex-grow: 1;
+}
+.todo_main .main_add, .todo_main .main_task_del {
+  cursor: pointer;
+  text-align: center;
+  margin-left: 10px;
+  width: var(--size);
+  height: var(--size);
+  line-height: calc(var(--size) * 0.95);
+  font-size: 32px;
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: var(--size);
+}
+.todo_main .main_task_cover {
+  margin: 10px;
+}
+.todo_main .main_task_cover .main_task {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-height: var(--size);
+}
+.todo_main .main_task_cover .main_task .main_task_text {
+  font-size: 20px;
+}
+.todo_main .main_task_cover .main_task .main_task_del {
+  display: none;
+  margin-left: auto;
+  margin-right: 0;
+  --size: 25px;
+  line-height: calc(var(--size) * 0.88);
+}
+.todo_main .main_task_cover .main_task:hover .main_task_del {
+  display: block;
 }/*# sourceMappingURL=style.css.map */
