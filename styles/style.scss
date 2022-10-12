@@ -32,6 +32,7 @@ body {
     max-width: 150px;
     .category_title {
         margin-top: 30px;
+        cursor: default;
      }
     .category_item_cover { 
         margin-top: 30px;
@@ -39,6 +40,34 @@ body {
             display: flex;
             align-items: center;
             gap: 10px;
+            .category_checkbox {
+                cursor: pointer;
+                input {
+                    display: none;
+                }
+                input:checked + div {
+                    background-color: var(--accent);
+                }
+                input:checked + div::after {
+                    content: '✔';
+                    text-align: center;
+                    display: block;
+                    position: absolute;
+                    font-size: 14px;
+                    top: 0px;
+                    left: 0px;
+                    right: 0px;
+                    bottom: 0px;
+                    color: #fff;
+                }
+                div {
+                    width: 20px;
+                    height: 20px;
+                    border: 1px solid var(--accent);
+                    border-radius: 10px;
+                    position: relative;
+                }
+            }
         }
         .category_item a {
             font-size: 23px;
@@ -47,7 +76,7 @@ body {
         }
      }
      
-    #category_dlt_btn, #category_add_btn {
+    #category-dlt-btn, #category-add-btn {
          margin-top: 10px;
          padding: 5px;
          background-color: var(--accent);
@@ -63,6 +92,7 @@ body {
         margin: 16px;
         .main_title {
             text-align: center;
+            cursor: default;
         }
         .main_new {
             display: flex;
@@ -91,13 +121,43 @@ body {
         border: 1px solid rgba($color: #000000, $alpha: 0.2);
         border-radius: var(--size);
     }
+
     .main_task_cover {
         margin: 10px;
         .main_task {
             display: flex;
             gap: 10px;
+            margin-bottom: 5px;
             align-items: center;
             min-height: var(--size);
+            cursor: default;
+            .main_checkbox {
+                cursor: pointer;
+                input {
+                    display: none;
+                }
+                input:checked + div {
+                    background-color: var(--accent);
+                }
+                input:checked + div::after {
+                    content: '✔';
+                    text-align: center;
+                    display: block;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    right: 0px;
+                    bottom: 0px;
+                    color: #fff;
+                }
+                div {
+                    width: 25px;
+                    height: 25px;
+                    border: 1px solid var(--accent);
+                    border-radius: 10px;
+                    position: relative;
+                }
+            }
             .main_task_text {
                 font-size: 20px;
             }
@@ -109,8 +169,12 @@ body {
                 line-height: calc(var(--size) * 0.88);
             }
         }
+        .main_task_complete {
+            text-decoration: line-through;
+            color: rgba($color: #000000, $alpha: 0.5);
+        }
         .main_task:hover .main_task_del {
             display: block; 
-        }
+        } 
     } 
 }

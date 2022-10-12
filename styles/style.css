@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Nunito:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 :root {
   --accent: #EA5959;
@@ -32,6 +33,7 @@ body {
 }
 .todo_category .category_title {
   margin-top: 30px;
+  cursor: default;
 }
 .todo_category .category_item_cover {
   margin-top: 30px;
@@ -41,12 +43,40 @@ body {
   align-items: center;
   gap: 10px;
 }
+.todo_category .category_item_cover .category_item .category_checkbox {
+  cursor: pointer;
+}
+.todo_category .category_item_cover .category_item .category_checkbox input {
+  display: none;
+}
+.todo_category .category_item_cover .category_item .category_checkbox input:checked + div {
+  background-color: var(--accent);
+}
+.todo_category .category_item_cover .category_item .category_checkbox input:checked + div::after {
+  content: "✔";
+  text-align: center;
+  display: block;
+  position: absolute;
+  font-size: 14px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  color: #fff;
+}
+.todo_category .category_item_cover .category_item .category_checkbox div {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  position: relative;
+}
 .todo_category .category_item_cover .category_item a {
   font-size: 23px;
   text-decoration: none;
   color: var(--accent);
 }
-.todo_category #category_dlt_btn, .todo_category #category_add_btn {
+.todo_category #category-dlt-btn, .todo_category #category-add-btn {
   margin-top: 10px;
   padding: 5px;
   background-color: var(--accent);
@@ -61,6 +91,7 @@ body {
 }
 .todo_main .main_content .main_title {
   text-align: center;
+  cursor: default;
 }
 .todo_main .main_content .main_new {
   display: flex;
@@ -93,8 +124,37 @@ body {
 .todo_main .main_task_cover .main_task {
   display: flex;
   gap: 10px;
+  margin-bottom: 5px;
   align-items: center;
   min-height: var(--size);
+  cursor: default;
+}
+.todo_main .main_task_cover .main_task .main_checkbox {
+  cursor: pointer;
+}
+.todo_main .main_task_cover .main_task .main_checkbox input {
+  display: none;
+}
+.todo_main .main_task_cover .main_task .main_checkbox input:checked + div {
+  background-color: var(--accent);
+}
+.todo_main .main_task_cover .main_task .main_checkbox input:checked + div::after {
+  content: "✔";
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  color: #fff;
+}
+.todo_main .main_task_cover .main_task .main_checkbox div {
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  position: relative;
 }
 .todo_main .main_task_cover .main_task .main_task_text {
   font-size: 20px;
@@ -105,6 +165,10 @@ body {
   margin-right: 0;
   --size: 25px;
   line-height: calc(var(--size) * 0.88);
+}
+.todo_main .main_task_cover .main_task_complete {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.5);
 }
 .todo_main .main_task_cover .main_task:hover .main_task_del {
   display: block;

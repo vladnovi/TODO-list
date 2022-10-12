@@ -16,39 +16,22 @@
                 <div class="category_item">
                     <a href="#">All</a>
                 </div>
-                <div class="category_item">
-                    <input type="checkbox">
-                    <a href="#">Groceries</a>
-                </div>
-                <div class="category_item">
-                    <input type="checkbox">
-                    <a href="#">Payments</a>
-                </div>
-                <div class="category_item">
-                    <input type="checkbox">
-                    <a href="#">College</a>
-                </div>
+                <div id="categories"></div>
             </div>
             <div class="category_manage">
-                <button id="category_add_btn">Add category</button>
-                <button id="category_dlt_btn">Delete selected</button>
+                <button id="category-add-btn">Add category</button>
+                <button id="category-dlt-btn">Delete selected</button>
             </div>
         </div>
         <div class="todo_main">
             <div class="main_content">
                  <h1 class="main_title"> All Tasks</h1>
                  <div class="main_new">
-                    <input class="main_input" type="text" placeholder="New Item">
-                    <div class="main_add">+</div>
+                    <input id="new" class="main_input" type="text" placeholder="New Item">
+                    <div id="add-task" class="main_add">+</div>
                  </div>
             </div> 
-            <div class="main_task_cover">
-                <div class="main_task">
-                    <input type="checkbox">
-                    <p class="main_task_text">This is my first task </p>
-                    <div class="main_task_del">-</div>
-                </div>
-            </div>          
+            <div id="tasks" class="main_task_cover"></div>          
         </div>
     </div>
     <script src="main.js"></script>
