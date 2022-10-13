@@ -76,7 +76,7 @@ body {
   text-decoration: none;
   color: var(--accent);
 }
-.todo_category #category-dlt-btn, .todo_category #category-add-btn {
+.todo_category #category-del-btn, .todo_category #category-add-btn {
   margin-top: 10px;
   padding: 5px;
   background-color: var(--accent);
