@@ -152,9 +152,9 @@ function categoriesRender(list) {
         const checked = category.isComplete ? 'checked' : ''
 
         const categoryHtml = 
-        `<div id="${category.id}" class="category_item">
+        `<div id="${category.id}" class="category_items">
         <label class="category_checkbox">
-            <input type="checkbox" ${checked}>
+            <input class="category_checkbox_input" type="checkbox" ${checked}>
             <div class="category_checkbox_div"></div>
         </label>
         <a href="#">${category.text}</a>
@@ -186,21 +186,15 @@ function changeCategoryStatus(id, list) {
 }
 dom.categoryDelBtn.onclick = () => {
     
-    const target = dom.categories.event
-
-    if (target.className.contains('category_checkbox_div')) {
-         const category = target.parentElement.parentElement
-         const categoryId = category.getAttribute('id')
-         const checked = target.previousSibling
-         const checkedStatus = checked.getAttribute('checked')
-         changeCategoryStatus(categoryId, checkedStatus, allCategories)
+         const category = document.querySelector(".category_items").getAttribute("id");
+         deleteTask(category, allCategories)
          categoriesRender(allCategories)
-    }
+    
 }
 
-function deleteTask(id, checked, list) {
+function deleteTask(id, list) {
     list.forEach((category, idx) => {
-       if (category.id == id && checked) {
+       if (category.id == id && category.isComplete) {
            delete list[idx]
        }
     })

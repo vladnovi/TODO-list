@@ -38,21 +38,21 @@ body {
 .todo_category .category_item_cover {
   margin-top: 30px;
 }
-.todo_category .category_item_cover .category_item {
+.todo_category .category_item_cover .category_item, .todo_category .category_item_cover .category_items {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.todo_category .category_item_cover .category_item .category_checkbox {
+.todo_category .category_item_cover .category_item .category_checkbox, .todo_category .category_item_cover .category_items .category_checkbox {
   cursor: pointer;
 }
-.todo_category .category_item_cover .category_item .category_checkbox input {
+.todo_category .category_item_cover .category_item .category_checkbox input, .todo_category .category_item_cover .category_items .category_checkbox input {
   display: none;
 }
-.todo_category .category_item_cover .category_item .category_checkbox input:checked + div {
+.todo_category .category_item_cover .category_item .category_checkbox input:checked + div, .todo_category .category_item_cover .category_items .category_checkbox input:checked + div {
   background-color: var(--accent);
 }
-.todo_category .category_item_cover .category_item .category_checkbox input:checked + div::after {
+.todo_category .category_item_cover .category_item .category_checkbox input:checked + div::after, .todo_category .category_item_cover .category_items .category_checkbox input:checked + div::after {
   content: "✔";
   text-align: center;
   display: block;
@@ -64,14 +64,14 @@ body {
   bottom: 0px;
   color: #fff;
 }
-.todo_category .category_item_cover .category_item .category_checkbox div {
+.todo_category .category_item_cover .category_item .category_checkbox div, .todo_category .category_item_cover .category_items .category_checkbox div {
   width: 20px;
   height: 20px;
   border: 1px solid var(--accent);
   border-radius: 10px;
   position: relative;
 }
-.todo_category .category_item_cover .category_item a {
+.todo_category .category_item_cover .category_item a, .todo_category .category_item_cover .category_items a {
   font-size: 23px;
   text-decoration: none;
   color: var(--accent);
