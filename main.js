@@ -185,18 +185,16 @@ function changeCategoryStatus(id, list) {
     })
 }
 dom.categoryDelBtn.onclick = () => {
-    
-         const category = document.querySelector(".category_items").getAttribute("id");
-         deleteTask(category, allCategories)
-         categoriesRender(allCategories)
-    
+         deleteCategory(allCategories)
+         categoriesRender(allCategories) 
 }
 
-function deleteTask(id, list) {
+function deleteCategory(list) {
     list.forEach((category, idx) => {
-       if (category.id == id && category.isComplete) {
+       if (category.isComplete) {
            delete list[idx]
        }
     })
 }
+
 
