@@ -94,7 +94,7 @@ dom.tasks.onclick = (event) => {
     function deleteTask(id, list) {
     list.forEach((task, idx) => {
        if (task.id == id) {
-           delete list[idx]
+           list.splice([idx], 1)
        }
     })
 }
@@ -192,7 +192,7 @@ dom.categoryDelBtn.onclick = () => {
 function deleteCategory(list) {
     list.forEach((category, idx) => {
        if (category.isComplete) {
-           delete list[idx]
+           list.splice([idx], 1)
        }
     })
 }
